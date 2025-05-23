@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celie Grace Amorato - Online Tutor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #37352f;
+            background-color: #ffffff;
+            font-size: 16px;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, #f7f6f3 0%, #ffffff 100%);
+            border-bottom: 1px solid #e3e2e0;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-hook {
+            font-size: 56px;
+            font-weight: 700;
+            color: #37352f;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtext {
+            font-size: 20px;
+            color: #787774;
+            margin-bottom: 32px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #37352f;
+            display: block;
+        }
+
+        .hero-stat-label {
+            font-size: 14px;
+            color: #787774;
+            font-weight: 500;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 32px;
+            background: #37352f;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-right: 16px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(55, 53, 47, 0.2);
+        }
+
+        .hero-cta:hover {
+            background: #2f2d28;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(55, 53, 47, 0.3);
+        }
+
+        .hero-cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 32px;
+            background: transparent;
+            color: #37352f;
+            text-decoration: none;
+            border: 2px solid #e3e2e0;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .hero-cta-secondary:hover {
+            background: #f7f6f3;
+            border-color: #d3d2d0;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(247, 246, 243, 0.8);
+            border: 1px solid rgba(227, 226, 224, 0.5);
+            border-radius: 6px;
+            padding: 12px 16px;
+            font-size: 14px;
+            color: #787774;
+            backdrop-filter: blur(10px);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            top: 25%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            bottom: 30%;
+            left: 8%;
+            animation-delay: 4s;
+        }
+
+        .floating-element:nth-child(4) {
+            bottom: 20%;
+            right: 12%;
+            animation-delay: 1s;
+        }
+
+        .floating-element:nth-child(5) {
+            top: 45%;
+            left: 5%;
+            animation-delay: 3s;
+        }
+
+        .floating-element:nth-child(6) {
+            top: 35%;
+            right: 8%;
+            animation-delay: 5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(1deg); }
+            66% { transform: translateY(5px) rotate(-1deg); }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #787774;
+            font-size: 14px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-5px); }
+            60% { transform: translateX(-50%) translateY(-3px); }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .page-header {
+            margin-bottom: 48px;
+        }
+
+        .page-icon {
+            width: 78px;
+            height: 78px;
+            background: #f7f6f3;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(227, 226, 224, 0.5);
+        }
+
+        .page-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #37352f;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .page-subtitle {
+            font-size: 16px;
+            color: #787774;
+            margin-bottom: 24px;
+        }
+
+        .notion-block {
+            margin-bottom: 4px;
+            min-height: 24px;
+            display: flex;
+            align-items: flex-start;
+            padding: 3px 2px;
+            border-radius: 3px;
+            transition: background-color 20ms ease-in;
+        }
+
+        .notion-block:hover {
+            background-color: rgba(55, 53, 47, 0.08);
+        }
+
+        .notion-block-content {
+            flex: 1;
+            padding: 2px 8px 2px 2px;
+        }
+
+        .heading-1 {
+            font-size: 30px;
+            font-weight: 700;
+            color: #37352f;
+            margin: 32px 0 8px 0;
+            line-height: 1.2;
+        }
+
+        .heading-2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #37352f;
+            margin: 24px 0 8px 0;
+            line-height: 1.3;
+        }
+
+        .heading-3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #37352f;
+            margin: 16px 0 4px 0;
+            line-height: 1.3;
+        }
+
+        .text-block {
+            font-size: 16px;
+            color: #37352f;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .text-muted {
+            color: #787774;
+        }
+
+        .callout {
+            background: #f7f6f3;
+            border-radius: 3px;
+            padding: 16px;
+            margin: 16px 0;
+            display: flex;
+            border-left: 3px solid #e3e2e0;
+        }
+
+        .callout-success {
+            background: #f0f9ff;
+            border-left: 3px solid #0ea5e9;
+        }
+
+        .callout-warning {
+            background: #fffbeb;
+            border-left: 3px solid #f59e0b;
+        }
+
+        .callout-icon {
+            margin-right: 12px;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .callout-content {
+            flex: 1;
+        }
+
+        .stats-container {
+            display: flex;
+            gap: 16px;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: #f7f6f3;
+            border: 1px solid #e3e2e0;
+            border-radius: 3px;
+            padding: 16px;
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #37352f;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #787774;
+            font-weight: 500;
+        }
+
+        .database-view {
+            border: 1px solid #e3e2e0;
+            border-radius: 3px;
+            margin: 16px 0;
+            overflow: hidden;
+        }
+
+        .database-header {
+            background: #f7f6f3;
+            padding: 12px 16px;
+            border-bottom: 1px solid #e3e2e0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #37352f;
+        }
+
+        .database-item {
+            padding: 16px;
+            border-bottom: 1px solid #e3e2e0;
+            transition: background-color 20ms ease-in;
+        }
+
+        .database-item:last-child {
+            border-bottom: none;
+        }
+
+        .database-item:hover {
+            background-color: rgba(55, 53, 47, 0.08);
+        }
+
+        .service-title {
+            font-weight: 600;
+            color: #37352f;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-description {
+            font-size: 14px;
+            color: #787774;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .service-details {
+            font-size: 12px;
+            color: #37352f;
+            background: rgba(55, 53, 47, 0.1);
+            padding: 4px 8px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .pricing-card {
+            border: 1px solid #e3e2e0;
+            border-radius: 6px;
+            padding: 24px;
+            text-align: center;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .pricing-card:hover {
+            border-color: #37352f;
+            box-shadow: 0 4px 12px rgba(55, 53, 47, 0.1);
+        }
+
+        .pricing-popular {
+            border-color: #2383e2;
+            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+        }
+
+        .pricing-popular::before {
+            content: "Most Popular";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2383e2;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .pricing-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .pricing-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #37352f;
+            margin-bottom: 4px;
+        }
+
+        .pricing-period {
+            font-size: 14px;
+            color: #787774;
+            margin-bottom: 16px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .pricing-features li {
+            padding: 4px 0;
+            font-size: 14px;
+            color: #37352f;
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: #22c55e;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .quote-block {
+            border-left: 3px solid #e3e2e0;
+            padding-left: 16px;
+            margin: 16px 0;
+            font-style: italic;
+            color: #787774;
+        }
+
+        .quote-author {
+            font-style: normal;
+            font-weight: 500;
+            color: #37352f;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        .success-story {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .success-metrics {
+            display: flex;
+            gap: 20px;
+            margin: 12px 0;
+            flex-wrap: wrap;
+        }
+
+        .success-metric {
+            text-align: center;
+            flex: 1;
+            min-width: 80px;
+        }
+
+        .success-metric-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0ea5e9;
+        }
+
+        .success-metric-label {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background: #2383e2;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 8px 8px 8px 0;
+            transition: background-color 20ms ease-in;
+        }
+
+        .button:hover {
+            background: #1a73d1;
+        }
+
+        .button-secondary {
+            background: transparent;
+            color: #37352f;
+            border: 1px solid #e3e2e0;
+        }
+
+        .button-secondary:hover {
+            background: rgba(55, 53, 47, 0.08);
+        }
+
+        .button-large {
+            padding: 12px 24px;
+            font-size: 16px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #e3e2e0;
+            margin: 32px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 16px 0;
+        }
+
+        .contact-item {
+            background: #f7f6f3;
+            border: 1px solid #e3e2e0;
+            border-radius: 3px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .contact-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #37352f;
+            margin-bottom: 4px;
+        }
+
+        .contact-value {
+            font-size: 14px;
+            color: #787774;
+        }
+
+        .toggle-list {
+            margin: 16px 0;
+        }
+
+        .toggle-item {
+            border: 1px solid #e3e2e0;
+            border-radius: 3px;
+            margin-bottom: 4px;
+            overflow: hidden;
+        }
+
+        .toggle-header {
+            padding: 12px 16px;
+            background: #f7f6f3;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            transition: background-color 20ms ease-in;
+        }
+
+        .toggle-header:hover {
+            background: #f1f0ee;
+        }
+
+        .toggle-arrow {
+            font-size: 12px;
+            transition: transform 0.2s;
+        }
+
+        .toggle-content {
+            padding: 16px;
+            background: white;
+            border-top: 1px solid #e3e2e0;
+            display: none;
+        }
+
+        .guarantee-box {
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 24px 0;
+            text-align: center;
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .credential-item {
+            text-align: center;
+            padding: 16px;
+            border: 1px solid #e3e2e0;
+            border-radius: 3px;
+            background: #f7f6f3;
+        }
+
+        .page-footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid #e3e2e0;
+            text-align: center;
+            color: #787774;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-hook {
+                font-size: 40px;
+            }
+            
+            .hero-subtext {
+                font-size: 18px;
+            }
+            
+            .hero-content {
+                padding: 20px;
+            }
+            
+            .hero-stats {
+                gap: 20px;
+            }
+            
+            .floating-element {
+                display: none;
+            }
+            
+            .hero-cta, .hero-cta-secondary {
+                display: block;
+                text-align: center;
+                margin: 8px 0;
+            }
+            
+            .container {
+                padding: 40px 20px;
+            }
+            
+            .page-title {
+                font-size: 32px;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .success-metrics {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Landing Section -->
+    <section class="hero-section">
+        <div class="hero-decorative">
+            <div class="floating-element">📚 Mathematics</div>
+            <div class="floating-element">🔬 Science</div>
+            <div class="floating-element">✍️ Writing</div>
+            <div class="floating-element">💻 Test Prep</div>
+            <div class="floating-element">📖 Study Skills</div>
+            <div class="floating-element">🎯 Coaching</div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-hook">Turn academic struggles into success stories</h1>
+            <p class="hero-subtext">Personalized online tutoring that transforms confusion into confidence, one lesson at a time.</p>
+            
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">500+</span>
+                    <span class="hero-stat-label">Students Helped</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">2.3</span>
+                    <span class="hero-stat-label">Avg Grade Improvement</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">98%</span>
+                    <span class="hero-stat-label">Success Rate</span>
+                </div>
+            </div>
+            
+            <div>
+                <a href="#pricing" class="hero-cta">Start Learning Today</a>
+                <a href="#contact" class="hero-cta-secondary">Free Consultation</a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <span style="margin-top: 8px; font-size: 18px;">↓</span>
+        </div>
+    </section>
+
+    <div class="container" id="main-content">
+        <div class="page-header">
+            <div class="page-icon">👩‍🏫</div>
+            <h1 class="page-title">Celie Grace Amorato</h1>
+            <p class="page-subtitle">Online Tutor & Academic Mentor</p>
+        </div>
+
+        <div class="callout callout-success">
+            <div class="callout-icon">🎯</div>
+            <div class="callout-content">
+                <strong>30-Day Success Guarantee:</strong> See measurable improvement in your grades within 30 days, or get your money back. No questions asked.
+            </div>
+        </div>
+
+        <h2 class="heading-2">Proven Student Success</h2>
+        
+        <div class="success-story">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <span style="font-size: 24px;">📈</span>
+                <strong>Sarah M. - Mathematics Transformation</strong>
+            </div>
+            <p style="margin-bottom: 12px; color: #37352f;">"I went from failing Algebra to scoring 92% on my final exam in just one semester!"</p>
+            <div class="success-metrics">
+                <div class="success-metric">
+                    <div class="success-metric-value">F → A</div>
+                    <div class="success-metric-label">Grade Jump</div>
+                </div>
+                <div class="success-metric">
+                    <div class="success-metric-value">4 months</div>
+                    <div class="success-metric-label">Timeline</div>
+                </div>
+                <div class="success-metric">
+                    <div class="success-metric-value">92%</div>
+                    <div class="success-metric-label">Final Score</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="success-story">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <span style="font-size: 24px;">🎓</span>
+                <strong>Marcus R. - SAT Success Story</strong>
+            </div>
+            <p style="margin-bottom: 12px; color: #37352f;">"Improved my SAT Math score by 200 points and got into my dream college!"</p>
+            <div class="success-metrics">
+                <div class="success-metric">
+                    <div class="success-metric-value">480 → 680</div>
+                    <div class="success-metric-label">SAT Math</div>
+                </div>
+                <div class="success-metric">
+                    <div class="success-metric-value">3 months</div>
+                    <div class="success-metric-label">Prep Time</div>
+                </div>
+                <div class="success-metric">
+                    <div class="success-metric-value">200pts</div>
+                    <div class="success-metric-label">Improvement</div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <h2 class="heading-2">About Me</h2>
+        <div class="notion-block">
+            <div class="notion-block-content">
+                <p class="text-block">I'm Celie Grace Amorato, a dedicated educator with a Bachelor's in Mathematics Education and 3+ years of proven online tutoring success. I've helped over 500 students transform their academic performance using my personalized teaching methodology.</p>
+            </div>
+        </div>
+
+        <div class="credentials-grid">
+            <div class="credential-item">
+                <div style="font-size: 24px; margin-bottom: 8px;">🎓</div>
+                <div style="font-weight: 600; margin-bottom: 4px;">Education</div>
+                <div style="font-size: 14px; color: #787774;">B.S. Mathematics Education<br>University of the Philippines</div>
+            </div>
+            <div class="credential-item">
+                <div style="font-size: 24px; margin-bottom: 8px;">✅</div>
+                <div style="font-weight: 600; margin-bottom: 4px;">Verified</div>
+                <div style="font-size: 14px; color: #787774;">Background Checked<br>& ID Verified</div>
+            </div>
+            <div class="credential-item">
+                <div style="font-size: 24px; margin-bottom: 8px;">⭐</div>
+                <div style="font-weight: 600; margin-bottom: 4px;">Rating</div>
+                <div style="font-size: 14px; color: #787774;">4.9/5 Stars<br>98% Student Satisfaction</div>
+            </div>
+            <div class="credential-item">
+                <div style="font-size: 24px; margin-bottom: 8px;">🏆</div>
+                <div style="font-weight: 600; margin-bottom: 4px;">Experience</div>
+                <div style="font-size: 14px; color: #787774;">3+ Years Online<br>500+ Students Helped</div>
+            </div>
+        </div>
+
+        <div class="callout">
+            <div class="callout-icon">💡</div>
+            <div class="callout-content">
+                <strong>My Teaching Philosophy:</strong> Every student learns differently. I create customized learning plans that match your unique learning style, pace, and goals. No cookie-cutter approaches - just personalized strategies that work.
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <h2 class="heading-2">Tutoring Services</h2>
+        <div class="database-view">
+            <div class="database-header">Complete Subject Coverage</div>
+            
+            <div class="database-item">
+                <div class="service-title">📚 Mathematics (All Levels)</div>
+                <div class="service-description">Algebra, Geometry, Trigonometry, Pre-Calculus, Calculus, Statistics</div>
+                <div class="service-details">✓ Grade 7-12 ✓ College Level ✓ AP Courses</div>
+            </div>
+            
+            <div class="database-item">
+                <div class="service-title">🔬 Sciences</div>
+                <div class="service-description">Biology, Chemistry, Physics, Environmental Science, Earth Science</div>
+                <div class="service-details">✓ Laboratory Reports ✓ Exam Prep ✓ Concept Visualization</div>
+            </div>
+            
+            <div class="database-item">
+                <div class="service-title">✍️ English & Writing</div>
+                <div class="service-description">Grammar, Literature Analysis, Essay Writing, Reading Comprehension</div>
+                <div class="service-details">✓ Academic Writing ✓ Creative Writing ✓ College Essays</div>
+            </div>
+            
+            <div class="database-item">
+                <div class="service-title">💻 Test Preparation</div>
+                <div class="service-description">SAT, ACT, AP Exams, College Entrance Tests, Local Standardized Tests</div>
+                <div class="service-details">✓ Practice Tests ✓ Strategy Training ✓ Score Improvement Plans</div>
+            </div>
+            
+            <div class="database-item">
+                <div class="service-title">📖 Study Skills & Organization</div>
+                <div class="service-description">Time Management, Note-taking, Memory Techniques, Exam Strategies</div>
+                <div class="service-details">✓ Study Plans ✓ Productivity Tools ✓ Stress Management</div>
+            </div>
+            
+            <div class="database-item">
+                <div class="service-title">🎯 Academic Coaching</div>
+                <div class="service-description">Goal Setting, Motivation Building, Academic Planning, College Prep</div>
+                <div class="service-details">✓ Progress Tracking ✓ Parent Updates ✓ Long-term Planning</div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <h2 class="heading-2" id="pricing">Transparent Pricing</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-title">Trial Session</div>
+                <div class="pricing-price">₱300</div>
+                <div class="pricing-period">First session only</div>
+                <ul class="pricing-features">
+                    <li>60-minute session</li>
+                    <li>Learning assessment</li>
+                    <li>Customized study plan</li>
+                    <li>No commitment required</li>
+                </ul>
+                <a href="#contact" class="button button-large">Book Trial</a>
+            </div>
+            
+            <div class="pricing-card pricing-popular">
+                <div class="pricing-title">Weekly Package</div>
+                <div class="pricing-price">₱1,600</div>
+                <div class="pricing-period">4 sessions per month</div>
+                <ul class="pricing-features">
+                    <li>4 x 60-minute sessions</li>
+                    <li>Weekly progress reports</li>
+                    <li>24/7 homework help via chat</li>
+                    <li>Free session rescheduling</li>
+                    <li>Parent progress updates</li>
+                </ul>
+                <a href="#contact" class="button button-large">Most Popular</a>
+            </div>
+            
+            <div class="pricing-card">
+                <div class="pricing-title">Intensive Package</div>
+                <div class="pricing-price">₱2,800</div>
+                <div class="pricing-period">8 sessions per month</div>
+                <ul class="pricing-features">
+                    <li>8 x 60-minute sessions</li>
+                    <li>Bi-weekly progress reports</li>
+                    <li>Priority scheduling</li>
+                    <li>Free study materials</li>
+                    <li>Test prep resources</li>
+                </ul>
+                <a href="#contact" class="button button-large">Best Value</a>
+            </div>
+        </div>
+
+        <div class="guarantee-box">
+            <div style="font-size: 24px; margin-bottom: 12px;">🛡️</div>
+            <div style="font-weight: 600; margin-bottom: 8px;">30-Day Money-Back Guarantee</div>
+            <div style="font-size: 14px; color: #92400e;">If you don't see improvement in your grades within 30 days, get a full refund. No questions asked.</div>
+        </div>
+
+        <hr class="divider">
+
+        <h2 class="heading-2">Student & Parent Testimonials</h2>
+        
+        <div class="quote-block">
+            "Celie is amazing! She helped me understand calculus concepts that I'd been struggling with for months. Her explanations are so clear and she's incredibly patient."
+            <div class="quote-author">— Sarah M., Grade 12 Student (A+ in Calculus)</div>
+        </div>
+        
+        <div class="quote-block">
+            "My son went from hating math to actually enjoying it. Celie has a gift for making difficult concepts easy to understand. His confidence has improved dramatically."
+            <div class="quote-author">— Maria T., Parent (Son improved from D to B+ in Math)</div>
+        </div>
+        
+        <div class="quote-block">
+            "I was skeptical about online tutoring, but Celie proved me wrong. The interactive whiteboard and her teaching style made it feel like she was right there with me."
+            <div class="quote-author">— Michael R., College Student (SAT Math: 480 → 680)</div>
+        </div>
+
+        <hr class="divider">
+
+        <h2 class="heading-2">For Parents</h2>
+        <div class="callout callout-warning">
+            <div class="callout-icon">👨‍👩‍👧‍👦</div>
+            <div class="callout-content">
+                <strong>Parent Partnership:</strong> I believe parents are key to student success. You'll receive detailed progress reports, study recommendations, and tips on how to support your child's learning at home.
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">94%</div>
+                <div class="stat-label">Parents Report Improved Confidence</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2-3x</div>
+                <div class="stat-label">Faster Homework Completion</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">87%</div>
+                <div class="stat-label">College Acceptance Rate</div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <h2 class="heading-2" id="contact">Contact & Booking</h2>
+        
+        <div class="contact-grid">
+            <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <div class="contact-label">Email</div>
+                <div class="contact-value">celie.amorato@email.com</div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">💬</div>
+                <div class="contact-label">WhatsApp</div>
+                <div class="contact-value">+63 912 345 6789</div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">🎥</div>
+                <div class="contact-label">Video Platforms</div>
+                <div class="contact-value">Zoom, Google Meet, Skype</div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">⏰</div>
+                <div class="contact-label">Availability</div>
+                <div class="contact-value">Mon-Fri: 2PM-10PM<br>Weekends: 9AM-6PM (GMT+8)</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 32px 0;">
+            <a href="#contact" class="button button-large">Schedule Free Consultation</a>
+            <a href="#contact" class="button button-secondary button-large">Ask Questions</a>
+        </div>
+
+        <div class="toggle-list">
+            <div class="toggle-item">
+                <div class="toggle-header" onclick="toggleContent(this)">
+                    <span class="toggle-arrow">▶</span>
+                    <span>Frequently Asked Questions</span>
+                </div>
+                <div class="toggle-content">
+                    <h3 class="heading-3">How do online sessions work?</h3>
+                    <p class="text-block text-muted">All sessions are conducted via video call using platforms like Zoom or Google Meet. I use interactive digital whiteboards, screen sharing, and real-time collaboration tools to make lessons engaging and effective. It's just like being in the same room!</p>
+                    
+                    <h3 class="heading-3">What if my child doesn't connect with your teaching style?</h3>
+                    <p class="text-block text-muted">I adapt my teaching approach to match each student's learning style. If needed, I can adjust my methods or recommend alternative resources. Your satisfaction is guaranteed within the first 30 days.</p>
+                    
+                    <h3 class="heading-3">Do you provide materials and resources?</h3>
+                    <p class="text-block text-muted">Yes! I provide digital worksheets, practice problems, study guides, and access to online learning tools. All materials are included in your package at no extra cost.</p>
+                    
+                    <h3 class="heading-3">How do you track student progress?</h3>
+                    <p class="text-block text-muted">I maintain detailed records of each session, track assignment scores, and provide weekly progress reports. Parents receive regular updates on their child's improvement and areas needing attention.</p>
+                    
+                    <h3 class="heading-3">What's your cancellation policy?</h3>
+                    <p class="text-block text-muted">Sessions can be rescheduled with 24-hour notice at no charge. Emergency cancellations are handled case-by-case. I understand life happens and am flexible with scheduling.</p>
+                    
+                    <h3 class="heading-3">Do you offer group sessions?</h3>
+                    <p class="text-block text-muted">Yes! Group sessions (2-4 students) are available at discounted rates. Perfect for siblings, friends studying the same subject, or study groups preparing for the same exam.</p>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <h2 class="heading-2">Free Resources</h2>
+        <div class="database-view">
+            <div class="database-header">Download These Study Guides</div>
+            
+            <div class="database-item">
+                <div class="service-title">📋 Study Skills Checklist</div>
+                <div class="service-description">A comprehensive guide to effective study habits and time management</div>
+            </div>
+            
+            <div class="database-item">
+                <div class="service-title">🧮 Math Formula Reference</div>
+                <div class="service-description">Essential formulas for Algebra, Geometry, and Calculus</div>
+            </div>
+            
+            <div class="database-item">
+                <div class="service-title">✅ Test-Taking Strategies</div>
+                <div class="service-description">Proven techniques to reduce test anxiety and improve scores</div>
+            </div>
+            
+            <div class="database-item">
+                <div class="service-title">👨‍👩‍👧 Parent Support Guide</div>
+                <div class="service-description">How to help your child succeed academically at home</div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <p>&copy; 2025 Celie Grace Amorato. Professional Online Tutoring Services.</p>
+            <p style="margin-top: 8px;">Helping students succeed, one lesson at a time.</p>
+            <p style="margin-top: 16px; font-size: 12px;">Licensed Educator • Background Verified • Fully Insured</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.toggle-arrow');
+            
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                arrow.style.transform = 'rotate(0deg)';
+            } else {
+                content.style.display = 'block';
+                arrow.style.transform = 'rotate(90deg)';
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add parallax effect to floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const elements = document.querySelectorAll('.floating-element');
+            
+            elements.forEach((element, index) => {
+                const speed = 0.1 + (index * 0.05);
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
