@@ -495,7 +495,7 @@ body {
 
 .pricing-badge {
     position: absolute;
-    top: -12px;
+    top: -5px;
     left: 50%;
     transform: translateX(-50%);
     background: #2383e2;
@@ -838,9 +838,9 @@ body {
     66% { transform: translateY(4px) rotate(-0.5deg); }
 }
 
-.scroll-indicator {
+/* .scroll-indicator {
     position: absolute;
-    bottom: 30px;
+    bottom: -50px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -849,7 +849,7 @@ body {
     color: #787774;
     font-size: 14px;
     animation: bounce 2s infinite;
-}
+} */
 
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
