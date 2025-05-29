@@ -495,7 +495,7 @@ body {
 
 .pricing-badge {
     position: absolute;
-    top: -5px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
     background: #2383e2;
